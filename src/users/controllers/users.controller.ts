@@ -11,7 +11,6 @@ import {
 
 import { UsersService } from '../services/users.service';
 import { CreateUserDto, UpdateUserDto } from '../dtos/user.dto';
-import { Order } from '../entities/order.entity';
 
 @Controller('users')
 export class UsersController {
@@ -29,7 +28,7 @@ export class UsersController {
 
   @Get(':id/orders')
   getOrders(@Param('id', ParseIntPipe) id: number) {
-    return this.usersService.getOrdersByUser(id);
+    return this.usersService.getOrderByUser(id);
   }
 
   @Post()
